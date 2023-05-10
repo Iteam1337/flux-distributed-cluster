@@ -15,7 +15,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: elasticsearch
   serviceName: elasticsearch
-  replicas: 0
+  replicas: 1
   template:
     metadata:
       labels:
@@ -36,7 +36,7 @@ spec:
           securityContext:
             privileged: true
           volumeMounts:
-            - name: elasticsearch-data
+            - name: elasticsearch
               mountPath: /usr/share/elasticsearch/data
         # NOTE:
         # To increase the ulimit
@@ -54,7 +54,7 @@ spec:
           image: iteam1337/elasticsearch:7.17.10
           imagePullPolicy: Always
           volumeMounts:
-            - name: elasticsearch-data
+            - name: elasticsearch
               mountPath: /data
           resources:
             requests:
@@ -79,7 +79,7 @@ spec:
       restartPolicy: Always
   volumeClaimTemplates:
     - metadata:
-        name: elasticsearch-data
+        name: elasticsearch
       spec:
         accessModes:
           - ReadWriteOnce
