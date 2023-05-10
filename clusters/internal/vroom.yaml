@@ -112,13 +112,13 @@ data:
     routingServers:
       osrm:
         car:
-          host: 'osrm.osrm.svc.cluster.local'
+          host: 'osrm.predictivemovement.se'
           port: '5000'
         bike:
-          host: 'osrm.osrm.svc.cluster.local'
+          host: 'osrm.predictivemovement.se'
           port: '5000'
         foot:
-          host: 'osrm.osrm.svc.cluster.local'
+          host: 'osrm.predictivemovement.se'
           port: '5000'
       ors:
         driving-car:
